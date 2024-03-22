@@ -1,0 +1,11 @@
+{%extends "main/baset.html"%}
+
+{%block content%}
+<div class="content">
+    <form action="" method="post">
+        {% csrf_token %}
+        <p class="message">Are you sure you want to delete  password of {{password.account}}</p>
+        <button class="deleteb" type="submit">yes</button>
+    </form>
+</div>
+{% endblock %}

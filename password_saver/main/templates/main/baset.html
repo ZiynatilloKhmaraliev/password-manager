@@ -1,0 +1,23 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/style2.css'%}">
+</head>
+<body>
+    <header>
+        <h1>Password saver</h1>
+        <div class="right">
+            <a href="{% url 'addpassword'%}" type="button">add password</a>
+            <a href="{%url 'logout'%}" type="button">logout</a>
+        </div>
+    </header>
+    {% block content %}
+    {% endblock%}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="{% static '/js/index.js'%}"></script>
+</body>
+</html>

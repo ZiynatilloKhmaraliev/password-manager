@@ -1,0 +1,34 @@
+{% extends "main/baset.html "%}
+{% load static %}
+{% block content%}
+
+<div class="content">
+    {% if passwords%}
+    <table>
+        <tr>
+            <th>No</th>
+            <th>Account</th>
+            <th>Username/Email</th>
+            <th>Password</th>
+          
+        </tr>
+        {% for password in passwords%}
+        <tr>
+            
+            <th>{{forloop.counter}}</th>
+            <th>{{password.account}}</th>
+            <th>{{password.username}}</th>
+            <th>{{password.password}}</th>
+            <th> <a href="{% url 'edit' password.id %}">edit</a></th>
+            <th> <a href="{% url 'delete' password.id %}">delete</a></th>
+           
+           
+        </tr>
+        {% endfor%}
+    </table>
+    {% else %}
+        <h1>You don't have any passwords saved</h1>
+    {%endif%}
+</div>
+
+{% endblock %}
